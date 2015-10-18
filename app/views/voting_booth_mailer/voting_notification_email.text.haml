@@ -1,0 +1,10 @@
+= "Hello #{@recipient.name}!"
+
+= "#{@voter.name} has just #{liked_or_hated(@like_or_hate)} your movie: #{@movie.title}"
+
+- if @like_or_hate == :like
+  Congratulations on a great recommendation!
+- else
+  Please don't let this discourage you. Keep recommending!
+
+The Movierama Team
