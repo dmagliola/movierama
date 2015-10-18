@@ -8,5 +8,9 @@ class UserDecorator < Draper::Decorator
   def hates?(movie)
     movie.haters.include?(object)
   end
+
+  def should_notify?
+    object.notify_me && object.email.present?
+  end
 end
 

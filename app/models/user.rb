@@ -3,6 +3,7 @@ class User < BaseModel
 
   attribute :name
   attribute :email
+  attribute :notify_me
 
   # Unique identifier for this user, in the form "{provider}|{provider-id}"
   attribute :uid

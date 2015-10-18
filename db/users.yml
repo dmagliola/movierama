@@ -5,7 +5,9 @@
 - name: Bob Ablleton
   uid:  'null|bob'
   email: bob@ablleton.com
+  notify_me: true
 - name: Charlie O'Callaghan
   uid:  'null|charlie'
   email: charlie@callaghan.com
+  notify_me: false
 

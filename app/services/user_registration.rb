@@ -35,6 +35,7 @@ class UserRegistration
         uid:        uid, 
         name:       @auth_hash['info']['name'],
         email:      @auth_hash['info']['email'],
+        notify_me:  true, # Default to being notified. User will be able to opt-out from his profile page, once we implement those
         created_at: Time.current.utc.to_i
       )
       @created = true
