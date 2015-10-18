@@ -14,6 +14,7 @@ class VotingBooth
     unvote # to guarantee consistency
     set.add(@user)
     _update_counts
+    notify_submitter(like_or_hate)
     self
   end
   
@@ -22,6 +23,13 @@ class VotingBooth
     @movie.haters.delete(@user)
     _update_counts
     self
+  end
+
+  def notify_submitter(like_or_hate)
+    user_decorator = UserDecorator.new(@movie.user)
+    if user_decorator.should_notify?
+      VotingBoothMailer.voting_notification_email(@movie, @user, like_or_hate).deliver # TODO: Change this to deliver_later once we migrate to Rails 4.2
+    end
   end
 
   private
